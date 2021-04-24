@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import PaymentPlanContextProvider from "./PaymentPlanContext";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PaymentPlanContextProvider>
+      <App />
+    </PaymentPlanContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

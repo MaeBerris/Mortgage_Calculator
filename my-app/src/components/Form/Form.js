@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import MortgageAmountInput from "../MortgageAmountInput/MortgageAmountInput";
 
 const Form = () => {
   return (
     <FormWrapper>
       <FormHeader>Payment Plan</FormHeader>
+      <MortgageAmountInput />
     </FormWrapper>
   );
 };
