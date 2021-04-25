@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import MortgageAmountInput from "../MortgageAmountInput/MortgageAmountInput";
+import InterestRateInput from "../InterestRateInput/InterestRateInput";
 
 const Form = () => {
   const [mortgage, setMortgageAmount] = React.useState(100000);
+  const [interest, setInterest] = React.useState(10);
   return (
     <FormWrapper>
       <FormHeader>Payment Plan</FormHeader>
@@ -11,6 +13,7 @@ const Form = () => {
         mortgage={mortgage}
         setMortgageAmount={setMortgageAmount}
       />
+      <InterestRateInput interest={interest} setInterest={setInterest} />
     </FormWrapper>
   );
 };
