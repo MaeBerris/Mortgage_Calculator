@@ -5,8 +5,7 @@ import React from "react";
 const MortgageAmountInput = ({ mortgage, setMortgageAmount }) => {
   const onChange = (ev) => {
     const CheckIsPositiveNumber = isPositiveNumber(ev.target.value);
-
-    if (!CheckIsPositiveNumber) {
+    if (!CheckIsPositiveNumber && ev.target.value !== "") {
       return;
     } else {
       setMortgageAmount(ev.target.value);

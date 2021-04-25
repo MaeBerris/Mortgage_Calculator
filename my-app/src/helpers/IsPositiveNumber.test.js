@@ -23,8 +23,15 @@ describe("IsPositiveNumber", () => {
   });
   test("given a negative number, it should return false", () => {
     const expected = false;
-    const actual = isPositiveNumber("-5");
+    const actual = isPositiveNumber("-5.5");
 
     expect(actual).toBe(expected);
+  });
+  test("given a number that isn't whole, it should return true ", () => {
+    const expected = true;
+    const actual1 = isPositiveNumber("555.32");
+    const actual2 = isPositiveNumber(2.5);
+    expect(actual1).toBe(expected);
+    expect(actual2).toBe(expected);
   });
 });
