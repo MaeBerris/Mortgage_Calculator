@@ -9,7 +9,7 @@ const AmortizationInput = ({ amortization, setAmortization }) => {
     <div>
       <label htmlFor="interestRate">Amortization Period</label>
       <select value={amortization} onChange={onChange}>
-        {constants.years.map((year) => {
+        {constants.AmortizationYears.map((year) => {
           return (
             <option value={year} key={year}>
               {year > 1 ? `${year} years` : `${year} year`}
