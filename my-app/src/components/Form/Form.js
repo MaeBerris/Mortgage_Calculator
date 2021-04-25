@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import MortgageAmountInput from "../MortgageAmountInput/MortgageAmountInput";
 import InterestRateInput from "../InterestRateInput/InterestRateInput";
+import AmortizationInput from "../AmortizationInput/AmortizationInput";
 
 const Form = () => {
-  const [mortgage, setMortgageAmount] = React.useState(100000);
+  const [mortgage, setMortgageAmount] = React.useState("");
   const [interest, setInterest] = React.useState(10);
+  const [amortization, setAmortization] = React.useState(25);
   return (
     <FormWrapper>
       <FormHeader>Payment Plan</FormHeader>
@@ -14,6 +16,10 @@ const Form = () => {
         setMortgageAmount={setMortgageAmount}
       />
       <InterestRateInput interest={interest} setInterest={setInterest} />
+      <AmortizationInput
+        amortization={amortization}
+        setAmortization={setAmortization}
+      />
     </FormWrapper>
   );
 };
