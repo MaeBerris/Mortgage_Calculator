@@ -4,7 +4,7 @@ import { seperateNumberByCommas } from "../../helpers/seperateNumberByCommas";
 import isPositiveNumber from "../../helpers/IsPositiveNumber";
 import React from "react";
 
-const MortgageAmountInput = () => {
+const MortgageAmountInput = ({ mortgage, setMortgageAmount }) => {
   // const onChange = (ev) => {
   //   const CheckIsPositiveNumber = isPositiveNumber(ev.target.value);
   //   if (!CheckIsPositiveNumber && ev.target.value !== "") {
@@ -14,14 +14,17 @@ const MortgageAmountInput = () => {
   //   }
   // };
 
-  const [mortgage, setMortgageAmount] = React.useState("");
-
   const onChange = (ev) => {
     const removedCommasNumber = removeCommasInNumber(ev.target.value);
-    console.log("first", removedCommasNumber);
+    const CheckIsPositiveNumber = isPositiveNumber(removedCommasNumber);
     const seperatedByCommas = seperateNumberByCommas(removedCommasNumber);
-    console.log("second", seperatedByCommas);
-    setMortgageAmount(seperatedByCommas);
+
+    if (!CheckIsPositiveNumber && ev.target.value !== "") {
+      return;
+    } else {
+      setMortgageAmount(seperatedByCommas);
+    }
+    // setMortgageAmount(seperatedByCommas);
   };
 
   return (

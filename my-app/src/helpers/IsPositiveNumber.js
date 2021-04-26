@@ -1,11 +1,9 @@
 export default function IsPositiveNumber(number) {
+  const myStringOfNumber = number.toString();
+  const stringNumberWithoutDecimal = myStringOfNumber.replace(".", "");
   const numbersOnly = /^\d+$/;
-  const parsedString = parseFloat(number);
 
-  if (!numbersOnly.test(number)) {
-    if (parsedString && !Number.isInteger(parsedString) && parsedString >= 0) {
-      return true;
-    }
+  if (!numbersOnly.test(stringNumberWithoutDecimal)) {
     return false;
   }
 
