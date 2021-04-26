@@ -6,12 +6,18 @@ import AmortizationInput from "../AmortizationInput/AmortizationInput";
 import PaymentFrequency from "../PaymentFrequency/PaymentFrequency";
 import TermInput from "../Term/TermInput";
 
-const Form = () => {
-  const [mortgage, setMortgageAmount] = React.useState("");
-  const [interest, setInterest] = React.useState(10);
-  const [amortization, setAmortization] = React.useState(25);
-  const [frequency, setFrequency] = React.useState(12);
-  const [term, setTerm] = React.useState(5);
+const Form = ({
+  mortgage,
+  setMortgageAmount,
+  interest,
+  setInterest,
+  amortization,
+  setAmortization,
+  frequency,
+  setFrequency,
+  term,
+  setTerm,
+}) => {
   return (
     <FormWrapper>
       <FormHeader>Payment Plan</FormHeader>
