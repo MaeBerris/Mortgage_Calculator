@@ -17,4 +17,12 @@ describe("MortgageAmountInput", () => {
 
     expect(screen.getByRole("mortgageAmount").value).toBe("1,555");
   });
+  test("does not allow user to input values other than numbers", async () => {
+    render(<Form />);
+    const mortgageInput = screen.getByRole("mortgageAmount");
+
+    await userEvent.type(mortgageInput, "1355abc");
+
+    expect(mortgageInput.value).toBe("1,355");
+  });
 });

@@ -18,10 +18,15 @@ const MortgageAmountInput = () => {
 
   const onChange = (ev) => {
     const removedCommasNumber = removeCommasInNumber(ev.target.value);
-    console.log("first", removedCommasNumber);
+    const CheckIsPositiveNumber = isPositiveNumber(removedCommasNumber);
     const seperatedByCommas = seperateNumberByCommas(removedCommasNumber);
-    console.log("second", seperatedByCommas);
-    setMortgageAmount(seperatedByCommas);
+
+    if (!CheckIsPositiveNumber && ev.target.value !== "") {
+      return;
+    } else {
+      setMortgageAmount(seperatedByCommas);
+    }
+    // setMortgageAmount(seperatedByCommas);
   };
 
   return (
