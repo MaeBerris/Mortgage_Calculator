@@ -7,7 +7,7 @@ import App from "../../App";
 describe("MortgageAmountInput", () => {
   test("renders MortgageAmountInput", () => {
     render(<MortgageAmountInput />);
-    expect(screen.getByText("Mortgage Amount")).toBeInTheDocument();
+    expect(screen.getByText("Mortgage Amount:")).toBeInTheDocument();
   });
   test("changes value of MortgageInput on user input", async () => {
     render(<App />);

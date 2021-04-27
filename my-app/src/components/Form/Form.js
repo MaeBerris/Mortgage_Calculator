@@ -4,7 +4,6 @@ import MortgageAmountInput from "../MortgageAmountInput/MortgageAmountInput";
 import InterestRateInput from "../InterestRateInput/InterestRateInput";
 import AmortizationInput from "../AmortizationInput/AmortizationInput";
 import PaymentFrequency from "../PaymentFrequency/PaymentFrequency";
-import TermInput from "../Term/TermInput";
 
 const Form = ({
   mortgage,
@@ -19,29 +18,38 @@ const Form = ({
   setTerm,
 }) => {
   return (
-    <FormWrapper>
-      <FormHeader>Payment Plan</FormHeader>
-      <MortgageAmountInput
-        mortgage={mortgage}
-        setMortgageAmount={setMortgageAmount}
-      />
-      <InterestRateInput interest={interest} setInterest={setInterest} />
-      <AmortizationInput
-        amortization={amortization}
-        setAmortization={setAmortization}
-      />
-      <PaymentFrequency frequency={frequency} setFrequency={setFrequency} />
-      <TermInput term={term} setTerm={setTerm} />
-    </FormWrapper>
+    <SectionWrapper>
+      <FormWrapper>
+        <FormHeader>Payment Plan</FormHeader>
+        <MortgageAmountInput
+          mortgage={mortgage}
+          setMortgageAmount={setMortgageAmount}
+        />
+        <InterestRateInput interest={interest} setInterest={setInterest} />
+        <AmortizationInput
+          amortization={amortization}
+          setAmortization={setAmortization}
+        />
+        <PaymentFrequency frequency={frequency} setFrequency={setFrequency} />
+      </FormWrapper>
+    </SectionWrapper>
   );
 };
 
 export default Form;
 
+const SectionWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0px;
+`;
+
 const FormWrapper = styled.form`
-  border: 2px solid blue;
-  border-radius: 5px;
+  border: 1px solid rgb(159, 220, 252);
   width: 30%;
+  background: white;
+  font-size: 15px;
 `;
 
 const FormHeader = styled.h3`
@@ -49,5 +57,7 @@ const FormHeader = styled.h3`
   background: darkblue;
   display: block;
   border-bottom: 1px solid blue;
-  margin: 0px;
+  font-weight: 600;
+  padding: 10px;
+  font-size: 20px;
 `;

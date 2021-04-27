@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
 import MortgageCalculator from "./components/MortgageCalculator/MortgageCalculator";
 import React from "react";
 
 function App() {
-  const [mortgage, setMortgageAmount] = React.useState("");
+  const [mortgage, setMortgageAmount] = React.useState("300,000");
   const [interest, setInterest] = React.useState(10);
   const [amortization, setAmortization] = React.useState(25);
   const [frequency, setFrequency] = React.useState(12);
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <AppWrapper role="app">
+      <Header />
       <Form
         mortgage={mortgage}
         setMortgageAmount={setMortgageAmount}
@@ -42,9 +44,4 @@ function App() {
 
 export default App;
 
-const AppWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`;
+const AppWrapper = styled.div``;
