@@ -1,5 +1,6 @@
 import React from "react";
 import { removeCommasInNumber } from "../../helpers/removeCommasInNumber";
+import { calculateMortgagePayment } from "../../helpers/MortgageCalculatorHelpers";
 
 const MortgageCalculator = ({
   mortgage,
@@ -8,24 +9,20 @@ const MortgageCalculator = ({
   frequency,
   term,
 }) => {
-  const [mortgagePerMonth, setMortgagePerMonth] = React.useState(0);
+  const [mortgagePayment, setMortgagePayment] = React.useState(0);
 
   React.useEffect(() => {
-    const interestPerMonth = interest / 100 / frequency;
+    const mortgagePaymentResult = calculateMortgagePayment(
+      mortgage,
+      interest,
+      amortization,
+      frequency
+    );
 
-    const numberOfMonths = amortization * frequency;
-
-    const line1 =
-      interestPerMonth * Math.pow(1 + interestPerMonth, numberOfMonths);
-
-    const line2 = Math.pow(1 + interestPerMonth, numberOfMonths) - 1;
-
-    const mortgageResult = removeCommasInNumber(mortgage) * (line1 / line2);
-
-    setMortgagePerMonth(mortgageResult.toFixed(2));
+    setMortgagePayment(mortgagePaymentResult);
   }, [mortgage, interest, amortization, frequency, term]);
 
-  return <div>{`${mortgagePerMonth}`}</div>;
+  return <div>{`${mortgagePayment}`}</div>;
 };
 
 export default MortgageCalculator;
