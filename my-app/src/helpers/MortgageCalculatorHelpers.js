@@ -26,10 +26,10 @@ export const calculateMortgagePayment = (
 
 export const calculateNumberOfPayments = (amortization, frequency, term) => {
   const totalNumberOfPayments = amortization * frequency;
-  const numberOfPaymentsPerTerm = frequency * term;
-  const numberOfPayments = { totalNumberOfPayments, numberOfPaymentsPerTerm };
+  // const numberOfPaymentsPerTerm = frequency * term;
+  // const numberOfPayments = { totalNumberOfPayments, numberOfPaymentsPerTerm };
 
-  return numberOfPayments;
+  return totalNumberOfPayments;
 };
 
 export const calculateTotalCosts = (
@@ -37,10 +37,10 @@ export const calculateTotalCosts = (
   numberOfPaymentsPerTerm,
   totalNumberOfPayments
 ) => {
-  let totalCostPerTerm = mortgagePayment * numberOfPaymentsPerTerm;
+  // let totalCostPerTerm = mortgagePayment * numberOfPaymentsPerTerm;
   let totalCost = mortgagePayment * totalNumberOfPayments;
 
-  totalCostPerTerm = totalCostPerTerm.toFixed(2);
+  // totalCostPerTerm = totalCostPerTerm.toFixed(2);
   totalCost = totalCost.toFixed(2);
-  return { totalCost, totalCostPerTerm };
+  return totalCost;
 };

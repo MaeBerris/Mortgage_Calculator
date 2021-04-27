@@ -19,22 +19,13 @@ describe("calculateMortgagePayment", () => {
 
 describe("calculateNumberOfPayments", () => {
   test("given an amortization number, a frequency number and a term number it should return an object with the correct values", () => {
-    expect(calculateNumberOfPayments(30, 12, 5)).toStrictEqual({
-      totalNumberOfPayments: 360,
-      numberOfPaymentsPerTerm: 60,
-    });
+    expect(calculateNumberOfPayments(30, 12, 5)).toBe(360);
   });
-  expect(calculateNumberOfPayments(25, 52, 10)).toStrictEqual({
-    totalNumberOfPayments: 1300,
-    numberOfPaymentsPerTerm: 520,
-  });
+  expect(calculateNumberOfPayments(25, 52, 10)).toBe(1300);
 });
 
 describe("calculateTotalCosts", () => {
   test("given a mortgage payment, the number of payments per term and the total number of payments it should return an object with the appropriate values", () => {
-    expect(calculateTotalCosts(877.57, 60, 360)).toStrictEqual({
-      totalCostPerTerm: "52654.20",
-      totalCost: "315925.20",
-    });
+    expect(calculateTotalCosts(877.57, 60, 360)).toBe("315925.20");
   });
 });

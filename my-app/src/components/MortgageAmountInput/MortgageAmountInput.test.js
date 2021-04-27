@@ -21,6 +21,7 @@ describe("MortgageAmountInput", () => {
     render(<App />);
     const mortgageInput = screen.getByRole("mortgageAmount");
 
+    await userEvent.clear(mortgageInput, "3,000,00");
     await userEvent.type(mortgageInput, "1355abc");
 
     expect(mortgageInput.value).toBe("1,355");
