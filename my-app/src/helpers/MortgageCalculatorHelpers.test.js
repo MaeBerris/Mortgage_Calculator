@@ -26,6 +26,6 @@ describe("calculateNumberOfPayments", () => {
 
 describe("calculateTotalCosts", () => {
   test("given a mortgage payment, the number of payments per term and the total number of payments it should return an object with the appropriate values", () => {
-    expect(calculateTotalCosts(877.57, 60, 360)).toBe("315925.20");
+    expect(calculateTotalCosts(877.57, 360)).toBe("315925.20");
   });
 });
