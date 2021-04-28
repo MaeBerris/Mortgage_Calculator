@@ -52,30 +52,34 @@ const MortgageCalculator = ({
     <Wrapper>
       <SectionTitle>Live Calculation Summary</SectionTitle>
       <Table>
-        <Tr>
-          <Th>Category</Th>
-          <Th>Amortization Period</Th>
-        </Tr>
-        <Tr>
-          <Td>Number Of Payments</Td>
-          <Td>{calculationSummaryData.numberOfPayments}</Td>
-        </Tr>
-        <Tr>
-          <Td>Mortgage Payment</Td>
-          <Td>{`$ ${calculationSummaryData.mortgagePayment}`}</Td>
-        </Tr>
-        <Tr>
-          <Td>Principal Payments</Td>
-          <Td>{`$ ${calculationSummaryData.principalPayment}`}</Td>
-        </Tr>
-        <Tr>
-          <Td>Interest Payment</Td>
-          <Td>{`$ ${calculationSummaryData.interestPayments}`}</Td>
-        </Tr>
-        <Tr>
-          <Td>Total Cost</Td>
-          <Td>{`$ ${calculationSummaryData.totalCost}`}</Td>
-        </Tr>
+        <thead>
+          <Tr>
+            <Th>Category</Th>
+            <Th>Amortization Period</Th>
+          </Tr>
+        </thead>
+        <tbody>
+          <Tr>
+            <Td>Number Of Payments</Td>
+            <Td>{calculationSummaryData.numberOfPayments}</Td>
+          </Tr>
+          <Tr>
+            <Td>Mortgage Payment</Td>
+            <Td>{`$ ${calculationSummaryData.mortgagePayment}`}</Td>
+          </Tr>
+          <Tr>
+            <Td>Principal Payments</Td>
+            <Td>{`$ ${calculationSummaryData.principalPayment}`}</Td>
+          </Tr>
+          <Tr>
+            <Td>Interest Payment</Td>
+            <Td>{`$ ${calculationSummaryData.interestPayments}`}</Td>
+          </Tr>
+          <Tr>
+            <Td>Total Cost</Td>
+            <Td>{`$ ${calculationSummaryData.totalCost}`}</Td>
+          </Tr>
+        </tbody>
       </Table>
     </Wrapper>
   );

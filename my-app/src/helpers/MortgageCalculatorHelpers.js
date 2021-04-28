@@ -9,7 +9,6 @@ export const calculateMortgagePayment = (
   if (interest === "") {
     return "0.00";
   }
-  console.log(interest);
   const interestOverTime = interest / 100 / frequency;
 
   const numberOfPayments = amortization * frequency;
@@ -26,19 +25,13 @@ export const calculateMortgagePayment = (
 
 export const calculateNumberOfPayments = (amortization, frequency) => {
   const totalNumberOfPayments = amortization * frequency;
-  // const numberOfPaymentsPerTerm = frequency * term;
-  // const numberOfPayments = { totalNumberOfPayments, numberOfPaymentsPerTerm };
 
   return totalNumberOfPayments;
 };
 
 export const calculateTotalCosts = (mortgagePayment, totalNumberOfPayments) => {
-  console.log(mortgagePayment);
-
-  // let totalCostPerTerm = mortgagePayment * numberOfPaymentsPerTerm;
   let totalCost = mortgagePayment * totalNumberOfPayments;
 
-  // totalCostPerTerm = totalCostPerTerm.toFixed(2);
   totalCost = totalCost.toFixed(2);
   return totalCost;
 };
@@ -47,7 +40,7 @@ export const calculateInterestPayments = (mortgage, totalCost) => {
   const parsedMortgage = removeCommasInNumber(mortgage);
   const interestPayment = (totalCost - parsedMortgage).toFixed(2);
   if (interestPayment < 0) {
-    return 0.0;
+    return "0.00";
   } else {
     return interestPayment;
   }
