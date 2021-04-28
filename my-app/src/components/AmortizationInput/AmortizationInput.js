@@ -8,8 +8,8 @@ const AmortizationInput = ({ amortization, setAmortization }) => {
   };
   return (
     <Wrapper>
-      <Label htmlFor="interestRate">Amortization Period:</Label>
-      <Select value={amortization} onChange={onChange}>
+      <Label htmlFor="amortizationPeriod">Amortization Period:</Label>
+      <Select value={amortization} onChange={onChange} id="amortizationPeriod">
         {constants.AmortizationYears.map((year) => {
           return (
             <option value={year} key={year}>

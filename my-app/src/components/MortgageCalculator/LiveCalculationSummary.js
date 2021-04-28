@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { seperateNumberByCommas } from "../../helpers/seperateNumberByCommas";
-import isPositiveNumber from "../../helpers/IsPositiveNumber";
 import {
   calculateMortgagePayment,
   calculateNumberOfPayments,
@@ -9,7 +8,7 @@ import {
   calculateInterestPayments,
 } from "../../helpers/MortgageCalculatorHelpers";
 
-const MortgageCalculator = ({
+const LiveCalculationSummary = ({
   mortgage,
   interest,
   amortization,
@@ -25,7 +24,6 @@ const MortgageCalculator = ({
   });
 
   React.useEffect(() => {
-    console.log(calculationSummaryData);
     const mortgagePaymentResult = calculateMortgagePayment(
       mortgage,
       interest,
@@ -41,7 +39,7 @@ const MortgageCalculator = ({
     const data = {
       numberOfPayments: numberOfPayments,
       mortgagePayment: seperateNumberByCommas(mortgagePaymentResult),
-      principalPayment: mortgage,
+      principalPayment: mortgage === "" ? "0.00" : mortgage,
       interestPayments: seperateNumberByCommas(`${interestPayments}`),
       totalCost: seperateNumberByCommas(totalCost),
     };
@@ -77,7 +75,7 @@ const MortgageCalculator = ({
           </Tr>
           <Tr>
             <Td>Total Cost</Td>
-            <Td>{`$ ${calculationSummaryData.totalCost}`}</Td>
+            <Td id="totalCostFinal">{`$ ${calculationSummaryData.totalCost}`}</Td>
           </Tr>
         </tbody>
       </Table>
@@ -85,7 +83,7 @@ const MortgageCalculator = ({
   );
 };
 
-export default MortgageCalculator;
+export default LiveCalculationSummary;
 
 const Wrapper = styled.div`
   display: flex;

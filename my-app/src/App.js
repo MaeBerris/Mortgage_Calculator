@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
-import MortgageCalculator from "./components/MortgageCalculator/MortgageCalculator";
+import LiveCalculationSummary from "./components/MortgageCalculator/LiveCalculationSummary";
 import React from "react";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         term={term}
         setTerm={setTerm}
       />
-      <MortgageCalculator
+      <LiveCalculationSummary
         mortgage={mortgage}
         setMortgageAmount={setMortgageAmount}
         interest={interest}

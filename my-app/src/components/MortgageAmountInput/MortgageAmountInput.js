@@ -26,7 +26,7 @@ const MortgageAmountInput = ({ mortgage, setMortgageAmount }) => {
         <Input
           type="text"
           id="mortgageAmount"
-          role="mortgageAmount"
+          // role="mortgageAmount"
           value={mortgage}
           onChange={onChange}
         />
